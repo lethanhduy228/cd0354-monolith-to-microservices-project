@@ -41,5 +41,4 @@ venv/
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 # other
-package-lock.json
 set_env.sh
