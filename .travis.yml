@@ -19,14 +19,14 @@ script:
   - docker build -t udagram-backend-user ./udagram-backend-user
   - docker build -t udagram-frontend ./udagram-frontend
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-backend-feed ltduy2208/udagram-backend-feed::latest
-  - docker tag udagram-backend-user ltduy2208/udagram-backend-user::latest
-  - docker tag udagram-frontend ltduy2208/udagram-frontend::latest
-  - docker tag udagram-reverseproxy ltduy2208/udagram-reverseproxy::latest
+  - docker tag udagram-backend-feed ltduy2208/udagram-backend-feed::v3
+  - docker tag udagram-backend-user ltduy2208/udagram-backend-user::v3
+  - docker tag udagram-frontend ltduy2208/udagram-frontend::v3
+  - docker tag udagram-reverseproxy ltduy2208/udagram-reverseproxy::v3
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ltduy2208/udagram-backend-feed:latest
-  - docker push ltduy2208/udagram-backend-user:latest
-  - docker push ltduy2208/udagram-frontend:latest
-  - docker push ltduy2208/udagram-reverseproxy:latest
+  - docker push ltduy2208/udagram-backend-feed:v3
+  - docker push ltduy2208/udagram-backend-user:v3
+  - docker push ltduy2208/udagram-frontend:v3
+  - docker push ltduy2208/udagram-reverseproxy:v3
